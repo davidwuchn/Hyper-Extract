@@ -75,6 +75,7 @@ plugins:
                     - cli/commands/feed.md
                     - cli/commands/show.md
                     - cli/commands/build-index.md
+                    - cli/commands/clean.md
                     - cli/commands/search.md
                     - cli/commands/talk.md
                     - cli/commands/info.md
@@ -165,6 +166,7 @@ plugins:
                     - zh/cli/commands/feed.md
                     - zh/cli/commands/show.md
                     - zh/cli/commands/build-index.md
+                    - zh/cli/commands/clean.md
                     - zh/cli/commands/search.md
                     - zh/cli/commands/talk.md
                     - zh/cli/commands/info.md
