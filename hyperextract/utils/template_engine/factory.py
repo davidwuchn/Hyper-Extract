@@ -98,7 +98,7 @@ class TemplateFactory:
         from hyperextract.types import AutoModel
 
         data_schema = parse_output(config.output, config.type)
-        prompt = parse_guideline(config.guideline, config.type)
+        prompt = parse_guideline(config.guideline, config.type, config.language)
         options = parse_option(config.options, config.type, override=kwargs)
         label_extractor = parse_display(config.display, config.type)
 
@@ -123,7 +123,7 @@ class TemplateFactory:
         from hyperextract.types import AutoList
 
         data_schema = parse_output(config.output, config.type)
-        prompt = parse_guideline(config.guideline, config.type)
+        prompt = parse_guideline(config.guideline, config.type, config.language)
         options = parse_option(config.options, config.type, override=kwargs)
         item_label_extractor = parse_display(config.display, config.type)
 
@@ -149,7 +149,7 @@ class TemplateFactory:
 
         data_schema = parse_output(config.output, config.type)
         item_id_extractor = parse_identifiers(config.identifiers, config.type)
-        prompt = parse_guideline(config.guideline, config.type)
+        prompt = parse_guideline(config.guideline, config.type, config.language)
         options = parse_option(config.options, config.type, override=kwargs)
         item_label_extractor = parse_display(config.display, config.type)
 
@@ -180,7 +180,7 @@ class TemplateFactory:
             identifiers
         )
         prompt, prompt_for_entity_extraction, prompt_for_relation_extraction = (
-            parse_guideline(config.guideline, config.type)
+            parse_guideline(config.guideline, config.type, config.language)
         )
         node_label_extractor, edge_label_extractor = parse_display(
             config.display, config.type
@@ -220,7 +220,7 @@ class TemplateFactory:
             identifiers
         )
         prompt, prompt_for_entity_extraction, prompt_for_relation_extraction = (
-            parse_guideline(config.guideline, config.type)
+            parse_guideline(config.guideline, config.type, config.language)
         )
         node_label_extractor, edge_label_extractor = parse_display(
             config.display, config.type
@@ -262,7 +262,7 @@ class TemplateFactory:
         ) = parse_identifiers(config.identifiers, config.type)
 
         prompt, prompt_for_entity_extraction, prompt_for_relation_extraction = (
-            parse_guideline(config.guideline, config.type)
+            parse_guideline(config.guideline, config.type, config.language)
         )
         node_label_extractor, edge_label_extractor = parse_display(
             config.display, config.type
@@ -306,7 +306,7 @@ class TemplateFactory:
             location_in_edge_extractor,
         ) = identifiers
         prompt, prompt_for_entity_extraction, prompt_for_relation_extraction = (
-            parse_guideline(config.guideline, config.type)
+            parse_guideline(config.guideline, config.type, config.language)
         )
         node_label_extractor, edge_label_extractor = parse_display(
             config.display, config.type
@@ -351,7 +351,7 @@ class TemplateFactory:
             location_in_edge_extractor,
         ) = identifiers
         prompt, prompt_for_entity_extraction, prompt_for_relation_extraction = (
-            parse_guideline(config.guideline, config.type)
+            parse_guideline(config.guideline, config.type, config.language)
         )
         node_label_extractor, edge_label_extractor = parse_display(
             config.display, config.type

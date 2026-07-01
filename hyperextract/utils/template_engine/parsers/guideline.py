@@ -27,19 +27,22 @@ LABEL_MAPPING = {
 }
 
 
-def parse_guideline(guideline, autotype: str) -> str | Tuple[str, str, str]:
+def parse_guideline(
+    guideline, autotype: str, language: str = "en"
+) -> str | Tuple[str, str, str]:
     """Parse guideline and return prompts based on autotype (config is already localized).
 
     Args:
         guideline: Guideline instance (single-language, all fields are strings)
         autotype: Template type (default: "model")
+        language: Language for the section labels (falls back to "en").
 
     Returns:
         tuple: main_prompt or (main_prompt, node_prompt, edge_prompt)
         - For non-graph types: returns main_prompt
         - For graph types in two_stage mode: returns (main_prompt, node_prompt, edge_prompt)
     """
-    labels = LABEL_MAPPING.get("zh", LABEL_MAPPING["en"])
+    labels = LABEL_MAPPING.get(language, LABEL_MAPPING["en"])
 
     prefix_prompt = f"# {labels.get('role_and_task')}:\n{guideline.target}"
 
